@@ -31,6 +31,19 @@ module.exports = {
         exclude: /node_modules/
       },
       {
+        test: /\.js?$/,
+        include: [/node_modules\/signature_pad/],
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              cacheDirectory: true,
+              presets: [['env', { 'modules': false, 'targets': { 'node': 4 } }]]
+            }
+          }
+        ],
+      },
+      {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {

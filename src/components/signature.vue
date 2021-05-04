@@ -88,7 +88,7 @@ export default {
         var blob = this.dataURLToBlob(dataURL);
         var firmaData = new FormData();
         firmaData.append("file", blob);
-        axios.post('http://localhost:3000/subir_firma', firmaData).then(
+        axios.post('http://apiremtest-env.eba-yumbkaye.us-east-2.elasticbeanstalk.com/subir_firma', firmaData).then(
           (result) => {
               console.log(result);
               console.log("Subida exitosa");

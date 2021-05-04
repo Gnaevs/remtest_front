@@ -58,7 +58,7 @@ export default {
       this.$refs.Video.srcObject = null;
       this.$refs.Video.src = window.URL.createObjectURL(data);
       console.log(videoData);
-      axios.post('http://localhost:3000/subir_video', videoData).then(
+      axios.post('http://apiremtest-env.eba-yumbkaye.us-east-2.elasticbeanstalk.com/subir_video', videoData).then(
           (result) => {
               console.log(result);
               console.log("Subida exitosa");

@@ -166,14 +166,14 @@ export default {
          this.$v.num_telefono.$error){
            alert("Tienes errores en el formulario")
          }else
-        axios.post("http://localhost:3000", auxForm).then((result) => {
+        axios.post("http://apiremtest-env.eba-yumbkaye.us-east-2.elasticbeanstalk.com/", auxForm).then((result) => {
         console.log(result);
         console.log("Datos Guardados");
       });
     },
   },
   mounted() {
-    axios.get("http://localhost:3000").then(function (response) {
+    axios.get("http://apiremtest-env.eba-yumbkaye.us-east-2.elasticbeanstalk.com").then(function (response) {
       console.log(response);
     });
   },

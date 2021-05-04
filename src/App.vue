@@ -2,7 +2,7 @@
   <v-app>
     <v-main>      
 
-     <router-link :to="{name: 'flujo_datos', params: { form:true, video:true, firma:true} }" >Iniciar</router-link>            
+     <router-link to="/" >Inicio</router-link>            
 
       <router-view/>
     </v-main>

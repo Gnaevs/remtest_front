@@ -34,6 +34,9 @@ export default {
     };
   },
   methods:{
+    guardarTodo(){
+      
+    },
     error(){
       if(this.form || this.video || this.firma){
         return false;
