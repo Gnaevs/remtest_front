@@ -1,21 +1,10 @@
 <template>
   <v-app>
-    <v-main>
-      <formulario
-      v-if="true"></formulario>
+    <v-main>      
 
-     <videoW
-     v-if="true"></videoW>
+     <router-link :to="{name: 'flujo_datos', params: { form:true, video:true, firma:true} }" >Iniciar</router-link>            
 
-     <signatureP
-     v-if="true"></signatureP>
-
-
-
-
-            
-
-      
+      <router-view/>
     </v-main>
   </v-app>
 </template>
@@ -37,6 +26,8 @@ export default {
 
     };
   },
+  mouted(){
+  }
   
   
  
