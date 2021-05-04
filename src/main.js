@@ -5,7 +5,6 @@ import 'vuetify/dist/vuetify.min.css'
 import VueRouter from 'vue-router'
 import VueRecord from '@codekraft-studio/vue-record'
 
-
 Vue.use(VueRecord)
 Vue.use(VueRouter)
 Vue.use(vuetify)

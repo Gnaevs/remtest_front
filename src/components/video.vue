@@ -21,28 +21,56 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "videoW",
   data() {
     return {
+      archivo_video: null,
       recordMode: {
         video: "press",
       },
     };
   },
   methods: {
+    //Aqui es donde intente hacer lo de los 10 segundos
+    grabar(){
+        var contdown = 10;
+        if(contdown == 0){
+            console.log("Ya pasaton 10 segundos");
+            start();
+        }else{
+            contdown-=1;
+            setTimeout("updateClock()",1000)
+            stop();
+        }
+
+
+    },
     onVideoStream(stream) {
       console.log("Got a video stream object:", stream);
+      
     },
     onVideoResult(data) {
+      var videoData = new FormData();
+      videoData.append("file", data);
       this.$refs.Video.srcObject = null;
       this.$refs.Video.src = window.URL.createObjectURL(data);
-    },
-    onResult(data) {
-      this.recordings.push({
-        src: window.URL.createObjectURL(data),
-      });
-    },
+      console.log(videoData);
+      axios.post('http://localhost:3000/subir_video', videoData).then(
+          (result) => {
+              console.log(result);
+              console.log("Subida exitosa");
+          },
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            }
+          }
+      );
+
+    },    
   },
 };
 </script>

@@ -1,6 +1,4 @@
 <template>
-  <v-app>
-    <v-main>
       <v-container>
         <v-card :elevation="5" class="mx-auto pa-5">
           <form 
@@ -81,8 +79,6 @@
           </form>
         </v-card>
       </v-container>
-    </v-main>
-  </v-app>
 </template>
 
 

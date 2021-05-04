@@ -2,10 +2,16 @@
   <v-app>
     <v-main>
       <formulario
-      v-if="false"></formulario>
+      v-if="true"></formulario>
 
      <videoW
      v-if="true"></videoW>
+
+     <signatureP
+     v-if="true"></signatureP>
+
+
+
 
             
 
@@ -17,12 +23,14 @@
 <script>
 import formU from './components/formU'
 import videoW from './components/video'
+import signatureP from './components/signature'
 export default {
   
   name: "app",
   components: {
     formulario : formU,
-    videoW
+    videoW,
+    signatureP
     },
   data() {
     return {      
